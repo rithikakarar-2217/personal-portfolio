@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects &amp; Innovation Lab — Rithika Karar</title>
+  <meta name="description"
+    content="Idea-to-Innovation Lab by Rithika Karar. Interactive Tic-Tac-Toe game experiment, technical breakdowns, and future engineering milestones.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- SVG Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230b0f17'/><text x='50' y='65' font-size='50' font-family='monospace' font-weight='bold' fill='%23bcf834' text-anchor='middle'>RK</text></svg>">
+</head>
+
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="./index.html" class="brand-link" aria-label="Rithika Karar Home">
+        <div class="brand-glyph">RK</div>
+        <div class="brand-text">
+          <span class="brand-name">Rithika Karar</span>
+          <span class="brand-role">AIML · 1ST YEAR // IDT</span>
+        </div>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="./index.html" class="nav-link">Home</a></li>
+          <li><a href="./about.html" class="nav-link">About Me</a></li>
+          <li><a href="./education.html" class="nav-link">Education &amp; Skills</a></li>
+          <li><a href="./projects.html" class="nav-link active">Innovation Lab</a></li>
+          <li><a href="./contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-status-badge">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>BGSIT / BGSCET · 2026–2030</span>
+      </div>
+
+      <button type="button" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- Section Header -->
+      <div class="section-header">
+        <span class="mono-tag">SIGNATURE FEATURE B // EXPERIMENTATION ARCHIVE</span>
+        <h1>Idea-to-Innovation Lab</h1>
+        <p class="lead-text">
+          Instead of generic project cards, my work is documented as empirical experiments. Each log records the initial
+          problem, the engineering approach, what was learned, and the live working artifact.
+        </p>
+      </div>
+
+      <!-- Lab Status Strip -->
+      <div class="lab-header-stats">
+        <div class="lab-stat-item">
+          <span class="lab-stat-label">TOTAL EXPERIMENTS:</span>
+          <span class="lab-stat-val">05</span>
+        </div>
+        <div class="lab-stat-item">
+          <span class="lab-stat-label">ACTIVE / COMPLETED:</span>
+          <span class="lab-stat-val" style="color: #4ade80;">01</span>
+        </div>
+        <div class="lab-stat-item">
+          <span class="lab-stat-label">IN PROGRESS:</span>
+          <span class="lab-stat-val" style="color: var(--accent-cyan);">01</span>
+        </div>
+        <div class="lab-stat-item">
+          <span class="lab-stat-label">PLANNED ROADMAP:</span>
+          <span class="lab-stat-val" style="color: var(--accent-violet);">03</span>
+        </div>
+      </div>
+
+      <!-- Featured Experiment 01: XOXO Tic-Tac-Toe Game -->
+      <article class="experiment-card-featured" id="experiment-001">
+        <div class="experiment-meta-top">
+          <div class="exp-badge-group">
+            <span class="exp-id">LOG: EXP-001</span>
+            <span class="exp-status-live">Status: Completed &amp; Interactive</span>
+          </div>
+
+          <div class="exp-tech-tags">
+            <span class="tech-tag">HTML5</span>
+            <span class="tech-tag">CSS3</span>
+            <span class="tech-tag">Vanilla JavaScript</span>
+            <span class="tech-tag">DOM Manipulation</span>
+          </div>
+        </div>
+
+        <div class="experiment-body-grid">
+          <!-- Left: Scientific Lab Breakdown -->
+          <div class="lab-breakdown">
+            <div>
+              <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">
+                XOXO Tic-Tac-Toe Web Application
+              </h2>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">
+                A clean, turn-based two-player browser game engineered to master state tracking and responsive DOM
+                interactions.
+              </p>
+            </div>
+
+            <!-- Problem / Idea -->
+            <div class="breakdown-block">
+              <div class="breakdown-label">
+                <span style="color:var(--accent-lime)">›</span> 01. The Problem or Idea
+              </div>
+              <div class="breakdown-content">
+                How can a web browser maintain an internal representation of a 3x3 game board, alternate turns reliably
+                between two players (Player X and Player O), prevent accidental overwriting of marked cells, and
+                calculate winner configurations across 8 distinct axes without external libraries?
+              </div>
+            </div>
+
+            <!-- Approach Taken -->
+            <div class="breakdown-block">
+              <div class="breakdown-label">
+                <span style="color:var(--accent-lime)">›</span> 02. The Engineering Approach
+              </div>
+              <div class="breakdown-content">
+                I modeled the board as a 9-element array <code>['','','','','','','','','']</code>. I defined an
+                immutable matrix of winning combinations (3 rows, 3 columns, and 2 diagonals). For every click event,
+                the script verifies if the tile is unoccupied, updates the state array with the current player's token,
+                renders the symbol, checks if a win pattern is fulfilled, and detects a tie if no empty cells remain.
+              </div>
+            </div>
+
+            <!-- Implemented Functionality -->
+            <div class="breakdown-block">
+              <div class="breakdown-label">
+                <span style="color:var(--accent-lime)">›</span> 03. Actual Implemented Functionality
+              </div>
+              <div class="breakdown-content">
+                <ul
+                  style="list-style: disc; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.35rem;">
+                  <li>Interactive 3x3 clickable grid with keyboard and mouse support.</li>
+                  <li>Automatic turn switching between Player X (Electric Lime) and Player O (Cyan).</li>
+                  <li>Real-time win verification highlighting the 3 winning tiles.</li>
+                  <li>Draw / Cat's game detection when 9 turns elapse without a winner.</li>
+                  <li>Instant reset button to replay without page reload.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- What I Learned -->
+            <div class="breakdown-block">
+              <div class="breakdown-label">
+                <span style="color:var(--accent-lime)">›</span> 04. What I Learned
+              </div>
+              <div class="breakdown-content">
+                This project cemented my understanding of how user actions generate asynchronous events in JavaScript. I
+                learned to separate internal application state (the JavaScript array) from the visual presentation layer
+                (the HTML DOM). It also taught me edge-case testing, such as making sure players cannot click on an
+                already-claimed square.
+              </div>
+            </div>
+
+            <!-- Repository Placeholder & Action Links -->
+            <div class="breakdown-block" style="padding-top: 0.5rem;">
+              <div class="breakdown-label">
+                <span style="color:var(--accent-lime)">›</span> 05. Source Code &amp; Repository
+              </div>
+              <div class="breakdown-content">
+                <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.75rem;">
+                  The source code is hosted on GitHub. Replace the placeholder URL below with your personal repository
+                  link:
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center;">
+                  <a href="https://github.com/your-username/xoxo-tic-tac-toe" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-secondary btn-sm" id="repo-link-tictactoe">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                    </svg>
+                    GitHub Repo Placeholder
+                  </a>
+                  <span class="mono-tag" style="font-size: 0.72rem; color: var(--text-dim);">[
+                    github.com/your-username/xoxo-tic-tac-toe ]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Embedded Playable Lab Simulator -->
+          <div class="game-lab-simulator" aria-label="Interactive Tic-Tac-Toe Game Demo">
+            <div class="simulator-header">
+              <span class="sim-title">INTERACTIVE PROTOTYPE</span>
+              <span class="sim-status" id="ttt-status">Player X's Turn</span>
+            </div>
+
+            <!-- Real Working 3x3 Grid -->
+            <div class="tictactoe-grid" id="ttt-grid" role="region" aria-label="Tic-Tac-Toe Game Board">
+              <!-- Rendered dynamically by script.js -->
+            </div>
+
+            <div class="sim-actions">
+              <button type="button" class="btn btn-outline-lime btn-sm" id="ttt-reset-btn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                  <path d="M3 3v5h5" />
+                </svg>
+                Reset Board
+              </button>
+            </div>
+
+            <p class="sim-note">
+              Play directly in this window! This live simulator proves the internal game state and win-checking
+              algorithms.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Section: Future & Planned Experiments -->
+      <div class="section-header" style="margin-top: 4rem; margin-bottom: 2rem;">
+        <span class="mono-tag">EXPERIMENTAL ROADMAP</span>
+        <h2>Upcoming Engineering Experiments</h2>
+        <p>
+          Honest, transparent records of projects currently being scoped or developed as part of my coursework. No
+          fabricated accomplishments.
+        </p>
+      </div>
+
+      <div class="future-experiments-grid">
+
+        <!-- Experiment 02: CLI Matrix & Math Engine -->
+        <div class="future-card">
+          <div class="exp-badge-group">
+            <span class="exp-id">EXP-002</span>
+            <span class="exp-status-in-progress">In Progress // College Coursework</span>
+          </div>
+
+          <h3 style="font-size: 1.25rem;">Terminal Math &amp; Matrix Utility</h3>
+          <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.5;">
+            <strong>Problem:</strong> Performing linear algebra matrix transformations and statistical computations in
+            terminal environments without large scientific libraries.
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Planned Approach:</strong> Written in C using 2D arrays, dynamic memory allocation
+            (`malloc`/`free`), and structured error handling for dimension mismatches.
+          </p>
+
+          <div style="margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="tech-tag">C Language</span>
+            <span class="tech-tag">GCC Compiler</span>
+            <span class="tech-tag">Algorithms</span>
+          </div>
+        </div>
+
+        <!-- Experiment 03: Python Algorithm Visualizer -->
+        <div class="future-card planned">
+          <div class="exp-badge-group">
+            <span class="exp-id">EXP-003</span>
+            <span class="exp-status-planned">Planned // Semester 2</span>
+          </div>
+
+          <h3 style="font-size: 1.25rem;">Python Sorting &amp; Search Visualizer</h3>
+          <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.5;">
+            <strong>Problem:</strong> Comparing theoretical Big-O time complexity with actual operation counts in
+            sorting algorithms like Bubble Sort and Binary Search.
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Planned Approach:</strong> Python scripts that record step counts and graph comparative execution
+            times for varying list sizes.
+          </p>
+
+          <div style="margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="tech-tag">Python 3</span>
+            <span class="tech-tag">Data Structures</span>
+            <span class="tech-tag">Complexity Analysis</span>
+          </div>
+        </div>
+
+        <!-- Experiment 04: AI Concept Explorer -->
+        <div class="future-card planned">
+          <div class="exp-badge-group">
+            <span class="exp-id">EXP-004</span>
+            <span class="exp-status-planned">Planned // AI/ML Foundation</span>
+          </div>
+
+          <h3 style="font-size: 1.25rem;">AI Concept Explorer (IDT Long-term)</h3>
+          <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.5;">
+            <strong>Problem:</strong> Making artificial intelligence concepts understandable through visual analogies
+            and human-centered design rather than impenetrable math.
+          </p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5;">
+            <strong>Planned Approach:</strong> Combining interactive canvas diagrams with real-time parameter tweaking
+            for perceptrons and classification boundaries.
+          </p>
+
+          <div style="margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="tech-tag">AIML Concepts</span>
+            <span class="tech-tag">Design Thinking</span>
+            <span class="tech-tag">Interactive Visuals</span>
+          </div>
+        </div>
+
+        <!-- Experiment 05: Smart Handling Machine Guidance System -->
+        <div class="future-card planned" id="experiment-005">
+          <div class="exp-badge-group">
+            <span class="exp-id">EXP-005</span>
+            <span class="exp-status-planned"
+              style="color: var(--accent-lime); border: 1px solid var(--accent-lime-border); padding: 0.15rem 0.5rem; border-radius: var(--radius-sm); background: var(--accent-lime-muted);">Category:
+              Conceptual Innovation</span>
+          </div>
+
+          <h3 style="font-size: 1.25rem;">Smart Handling Machine Guidance System</h3>
+
+          <!-- Concept Notice Banner -->
+          <div
+            style="background: rgba(188, 248, 52, 0.05); border: 1px dashed var(--accent-lime-border); border-radius: var(--radius-sm); padding: 0.65rem 0.85rem; font-size: 0.82rem; color: var(--accent-lime); font-family: var(--font-mono); display: flex; align-items: flex-start; gap: 0.5rem; line-height: 1.45;">
+            <span style="font-size: 0.95rem; line-height: 1;" aria-hidden="true">💡</span>
+            <span><strong>Concept Status:</strong> Proposed concept for future implementation — not a completed or
+              physically built robot.</span>
+          </div>
+
+          <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.55;">
+            <strong>Inspiration:</strong> My industrial visit to GTTC.
+          </p>
+
+          <p style="font-size: 0.9rem; color: var(--text-body); line-height: 1.55;">
+            <strong>Idea:</strong> A proposed beginner-friendly guidance system to help people understand industrial
+            machine operations through step-by-step instructions, input guidance, and safety reminders.
+          </p>
+
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55;">
+            <strong>Goal:</strong> Make learning about industrial machinery easier and more accessible for beginners.
+          </p>
+
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55;">
+            <strong>Future scope:</strong> Develop an interactive guidance interface or training system.
+          </p>
+
+          <div style="margin-top: auto; display: flex; gap: 0.5rem; flex-wrap: wrap; padding-top: 0.5rem;">
+            <span class="tech-tag"
+              style="border-color: var(--accent-lime-border); color: var(--accent-lime);">Conceptual Innovation</span>
+            <span class="tech-tag">GTTC Industrial Visit</span>
+            <span class="tech-tag">Machine Guidance</span>
+            <span class="tech-tag">Safety Reminders</span>
+            <span class="tech-tag">Interactive Training</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Real Undergraduate Milestones (No Fake Certificates) -->
+      <div class="snapshot-card" style="margin-top: 3.5rem; padding: 2rem;">
+        <div class="snapshot-label">AUTHENTIC ACADEMIC MILESTONES</div>
+        <h3 style="margin-bottom: 1rem;">Undergraduate Progress Log</h3>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="mono-tag"
+              style="color: var(--accent-lime); font-size: 0.85rem; padding-top: 0.1rem;">2026</span>
+            <div>
+              <strong style="color: var(--text-main);">Admitted to B.Tech in Artificial Intelligence &amp; Machine
+                Learning</strong>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.2rem;">
+                Commenced undergraduate studies at BGS College of Engineering and Technology (BGSCET).
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="mono-tag"
+              style="color: var(--accent-lime); font-size: 0.85rem; padding-top: 0.1rem;">2026</span>
+            <div>
+              <strong style="color: var(--text-main);">Conceived IDT Portfolio Experiment "Thought → Experiment →
+                Creation"</strong>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.2rem;">
+                Developed an original digital thinking space for college Innovation &amp; Design Thinking coursework.
+              </p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 1rem; align-items: flex-start;">
+            <span class="mono-tag"
+              style="color: var(--accent-lime); font-size: 0.85rem; padding-top: 0.1rem;">2026</span>
+            <div>
+              <strong style="color: var(--text-main);">Deployed First Web Application: XOXO Tic-Tac-Toe</strong>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 0.2rem;">
+                Successfully engineered game logic, responsive grid layouts, and state management in pure JavaScript.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-name">Rithika Karar</div>
+          <div class="mono-tag" style="color: var(--accent-lime); font-size: 0.75rem;">THOUGHT → EXPERIMENT → CREATION
+          </div>
+          <p class="footer-manifesto">
+            First-Year B.Tech Student in Artificial Intelligence and Machine Learning at BGS College of Engineering and
+            Technology. Building a solid foundation in computational thinking and software design.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-heading">Navigation</div>
+          <div class="footer-links">
+            <a href="./index.html" class="footer-link">Home</a>
+            <a href="./about.html" class="footer-link">About Me</a>
+            <a href="./education.html" class="footer-link">Education &amp; Skills</a>
+            <a href="./projects.html" class="footer-link">Innovation Lab</a>
+            <a href="./contact.html" class="footer-link">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-heading">College Context</div>
+          <div class="footer-links">
+            <span class="footer-link" style="color: var(--text-main);">BGSCET / BGSIT</span>
+            <span class="footer-link">Dept of AI &amp; ML</span>
+            <span class="footer-link">IDT Activity Portfolio</span>
+            <span class="footer-link">Expected Grad: 2030</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Rithika Karar. Handcrafted for IDT (Innovation &amp; Design Thinking).</div>
+        <div style="color: var(--accent-lime);">Designed with HTML5, CSS3 &amp; Vanilla JavaScript</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
